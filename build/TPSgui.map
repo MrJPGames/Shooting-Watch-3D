@@ -164,140 +164,140 @@ Linker script and memory map
                 0x001001b4                gfxDrawSprite
                 0x001002c4                gfxDrawSpriteAlpha
                 0x00100430                gfxDrawSpriteAlphaBlend
- .text          0x001005e8      0x148 main.o
+ .text          0x001005e8      0x144 main.o
                 0x001005e8                resetVars
                 0x0010060c                renderNumber
                 0x00100650                render
- .text          0x00100730      0x52c C:\devkitPro\ctrulib\libctru/lib\libctru.a(gfx.o)
-                0x0010079c                gfxSet3D
-                0x001007ac                gfxSetFramebufferInfo
-                0x001007fc                gfxWriteFramebufferInfo
-                0x001008a8                gfxInit
-                0x00100a00                gfxExit
-                0x00100a98                gfxGetFramebuffer
-                0x00100b38                gfxFlushBuffers
-                0x00100bc4                gfxSwapBuffers
-                0x00100c1c                gfxSwapBuffersGpu
- .text          0x00100c5c      0x238 C:\devkitPro\ctrulib\libctru/lib\libctru.a(initSystem.o)
-                0x00100c5c                __ctru_exit
-                0x00100ce0                initSystem
- .text          0x00100e94      0x300 C:\devkitPro\ctrulib\libctru/lib\libctru.a(srv.o)
-                0x00100e94                __get_handle_from_list
-                0x00100f2c                __destroy_handle_list
-                0x00100f80                srvExit
-                0x00100fa8                srvRegisterClient
-                0x00100fe0                srvInit
-                0x00101034                srvGetServiceHandle
-                0x001010b4                srvPmInit
-                0x00101108                srvRegisterProcess
-                0x0010115c                srvUnregisterProcess
- .text          0x00101194     0x18fc C:\devkitPro\ctrulib\libctru/lib\libctru.a(apt.o)
-                0x001011f8                aptInitCaptureInfo
-                0x001012ac                aptWaitStatusEvent
-                0x001012d4                aptGetStatus
-                0x0010130c                aptSetStatus
-                0x00101374                aptGetStatusPower
-                0x001013ac                aptSetStatusPower
-                0x001013e4                aptOpenSession
-                0x00101408                aptCloseSession
-                0x00101430                aptSignalReadyForSleep
-                0x00101440                APT_GetLockHandle
-                0x00101498                APT_Initialize
-                0x00101508                APT_HardwareResetAsync
-                0x00101540                APT_Enable
-                0x00101580                APT_GetAppletManInfo
-                0x00101608                aptGetMenuAppID
-                0x00101644                APT_IsRegistered
-                0x0010169c                APT_InquireNotification
-                0x001016f4                APT_PrepareToJumpToHomeMenu
-                0x0010172c                APT_JumpToHomeMenu
-                0x00101790                APT_NotifyToWait
-                0x001017d0                APT_AppletUtility
-                0x00101864                aptAppletUtility_Exit_RetToApp
-                0x00101954                aptAppletClosed
-                0x00101a70                aptInit
-                0x00101bb0                APT_GlanceParameter
-                0x00101c38                APT_ReceiveParameter
-                0x00101cc0                APT_SendParameter
-                0x00101d40                APT_SendCaptureBufferInfo
-                0x00101d9c                aptReturnToMenu
-                0x00101f5c                APT_ReplySleepQuery
-                0x00101fac                APT_ReplySleepNotificationComplete
-                0x00101fec                aptEventHandler
-                0x00102298                APT_PrepareToCloseApplication
-                0x001022d8                APT_CloseApplication
-                0x00102344                aptExit
-                0x00102414                APT_SetAppCpuTimeLimit
-                0x00102458                APT_GetAppCpuTimeLimit
-                0x001024ac                APT_CheckNew3DS_Application
-                0x00102500                APT_CheckNew3DS_System
-                0x00102554                APT_CheckNew3DS
-                0x001025d0                APT_PrepareToDoAppJump
-                0x00102630                APT_DoAppJump
-                0x001026a8                APT_PrepareToStartLibraryApplet
-                0x001026e8                APT_StartLibraryApplet
-                0x0010275c                aptAppletStarted
-                0x00102860                aptMainLoop
-                0x001028d8                APT_LaunchLibraryApplet
- .text          0x00102a90      0x950 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gsp.o)
-                0x00102b84                gspInit
-                0x00102b98                gspExit
-                0x00102bb0                gspInitEventHandler
-                0x00102c7c                gspExitEventHandler
-                0x00102cd4                gspWaitForEvent
-                0x00102d2c                GSPGPU_WriteHWRegs
-                0x00102db0                GSPGPU_WriteHWRegsWithMask
-                0x00102e4c                GSPGPU_ReadHWRegs
-                0x00102ed0                GSPGPU_SetBufferSwap
-                0x00102f50                GSPGPU_FlushDataCache
-                0x00102fb4                GSPGPU_InvalidateDataCache
-                0x00103018                GSPGPU_SetLcdForceBlack
-                0x00103058                GSPGPU_TriggerCmdReqQueue
-                0x00103090                GSPGPU_RegisterInterruptRelayQueue
-                0x0010310c                GSPGPU_UnregisterInterruptRelayQueue
-                0x00103144                GSPGPU_AcquireRight
-                0x00103198                GSPGPU_ReleaseRight
-                0x001031d0                GSPGPU_ImportDisplayCaptureInfo
-                0x00103264                GSPGPU_SaveVramSysArea
-                0x0010329c                GSPGPU_RestoreVramSysArea
-                0x001032d4                GSPGPU_SubmitGxCommand
- .text          0x001033e0      0x264 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gx.o)
-                0x001033e0                GX_RequestDma
-                0x00103434                GX_SetCommandList_Last
-                0x0010349c                GX_SetMemoryFill
-                0x00103510                GX_SetDisplayTransfer
-                0x00103574                GX_SetTextureCopy
-                0x001035dc                GX_SetCommandList_First
- .text          0x00103644      0x644 C:\devkitPro\ctrulib\libctru/lib\libctru.a(hid.o)
-                0x00103644                hidExit
-                0x001036c8                hidWaitForEvent
-                0x00103720                hidCheckSectionUpdateTime
-                0x0010375c                hidScanInput
-                0x00103990                hidKeysHeld
-                0x001039a0                hidKeysDown
-                0x001039b0                hidKeysUp
-                0x001039c0                hidTouchRead
-                0x001039d8                hidCircleRead
-                0x001039f0                hidAccelRead
-                0x00103a10                hidGyroRead
-                0x00103a30                HIDUSER_GetHandles
-                0x00103ac4                hidInit
-                0x00103bc8                HIDUSER_EnableAccelerometer
-                0x00103bf8                HIDUSER_DisableAccelerometer
-                0x00103c28                HIDUSER_EnableGyroscope
-                0x00103c58                HIDUSER_DisableGyroscope
- .text          0x00103c88      0x360 C:\devkitPro\ctrulib\libctru/lib\libctru.a(irrst.o)
-                0x00103c88                irrstExit
-                0x00103cf0                irrstWaitForEvent
-                0x00103d3c                irrstCheckSectionUpdateTime
-                0x00103d78                irrstScanInput
-                0x00103e2c                irrstKeysHeld
-                0x00103e44                irrstCstickRead
-                0x00103e5c                IRRST_GetHandles
-                0x00103eb0                irrstInit
-                0x00103f78                IRRST_Initialize
-                0x00103fb8                IRRST_Shutdown
- *fill*         0x00103fe8        0x8 
+ .text          0x0010072c      0x52c C:\devkitPro\ctrulib\libctru/lib\libctru.a(gfx.o)
+                0x00100798                gfxSet3D
+                0x001007a8                gfxSetFramebufferInfo
+                0x001007f8                gfxWriteFramebufferInfo
+                0x001008a4                gfxInit
+                0x001009fc                gfxExit
+                0x00100a94                gfxGetFramebuffer
+                0x00100b34                gfxFlushBuffers
+                0x00100bc0                gfxSwapBuffers
+                0x00100c18                gfxSwapBuffersGpu
+ .text          0x00100c58      0x238 C:\devkitPro\ctrulib\libctru/lib\libctru.a(initSystem.o)
+                0x00100c58                __ctru_exit
+                0x00100cdc                initSystem
+ .text          0x00100e90      0x300 C:\devkitPro\ctrulib\libctru/lib\libctru.a(srv.o)
+                0x00100e90                __get_handle_from_list
+                0x00100f28                __destroy_handle_list
+                0x00100f7c                srvExit
+                0x00100fa4                srvRegisterClient
+                0x00100fdc                srvInit
+                0x00101030                srvGetServiceHandle
+                0x001010b0                srvPmInit
+                0x00101104                srvRegisterProcess
+                0x00101158                srvUnregisterProcess
+ .text          0x00101190     0x18fc C:\devkitPro\ctrulib\libctru/lib\libctru.a(apt.o)
+                0x001011f4                aptInitCaptureInfo
+                0x001012a8                aptWaitStatusEvent
+                0x001012d0                aptGetStatus
+                0x00101308                aptSetStatus
+                0x00101370                aptGetStatusPower
+                0x001013a8                aptSetStatusPower
+                0x001013e0                aptOpenSession
+                0x00101404                aptCloseSession
+                0x0010142c                aptSignalReadyForSleep
+                0x0010143c                APT_GetLockHandle
+                0x00101494                APT_Initialize
+                0x00101504                APT_HardwareResetAsync
+                0x0010153c                APT_Enable
+                0x0010157c                APT_GetAppletManInfo
+                0x00101604                aptGetMenuAppID
+                0x00101640                APT_IsRegistered
+                0x00101698                APT_InquireNotification
+                0x001016f0                APT_PrepareToJumpToHomeMenu
+                0x00101728                APT_JumpToHomeMenu
+                0x0010178c                APT_NotifyToWait
+                0x001017cc                APT_AppletUtility
+                0x00101860                aptAppletUtility_Exit_RetToApp
+                0x00101950                aptAppletClosed
+                0x00101a6c                aptInit
+                0x00101bac                APT_GlanceParameter
+                0x00101c34                APT_ReceiveParameter
+                0x00101cbc                APT_SendParameter
+                0x00101d3c                APT_SendCaptureBufferInfo
+                0x00101d98                aptReturnToMenu
+                0x00101f58                APT_ReplySleepQuery
+                0x00101fa8                APT_ReplySleepNotificationComplete
+                0x00101fe8                aptEventHandler
+                0x00102294                APT_PrepareToCloseApplication
+                0x001022d4                APT_CloseApplication
+                0x00102340                aptExit
+                0x00102410                APT_SetAppCpuTimeLimit
+                0x00102454                APT_GetAppCpuTimeLimit
+                0x001024a8                APT_CheckNew3DS_Application
+                0x001024fc                APT_CheckNew3DS_System
+                0x00102550                APT_CheckNew3DS
+                0x001025cc                APT_PrepareToDoAppJump
+                0x0010262c                APT_DoAppJump
+                0x001026a4                APT_PrepareToStartLibraryApplet
+                0x001026e4                APT_StartLibraryApplet
+                0x00102758                aptAppletStarted
+                0x0010285c                aptMainLoop
+                0x001028d4                APT_LaunchLibraryApplet
+ .text          0x00102a8c      0x950 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gsp.o)
+                0x00102b80                gspInit
+                0x00102b94                gspExit
+                0x00102bac                gspInitEventHandler
+                0x00102c78                gspExitEventHandler
+                0x00102cd0                gspWaitForEvent
+                0x00102d28                GSPGPU_WriteHWRegs
+                0x00102dac                GSPGPU_WriteHWRegsWithMask
+                0x00102e48                GSPGPU_ReadHWRegs
+                0x00102ecc                GSPGPU_SetBufferSwap
+                0x00102f4c                GSPGPU_FlushDataCache
+                0x00102fb0                GSPGPU_InvalidateDataCache
+                0x00103014                GSPGPU_SetLcdForceBlack
+                0x00103054                GSPGPU_TriggerCmdReqQueue
+                0x0010308c                GSPGPU_RegisterInterruptRelayQueue
+                0x00103108                GSPGPU_UnregisterInterruptRelayQueue
+                0x00103140                GSPGPU_AcquireRight
+                0x00103194                GSPGPU_ReleaseRight
+                0x001031cc                GSPGPU_ImportDisplayCaptureInfo
+                0x00103260                GSPGPU_SaveVramSysArea
+                0x00103298                GSPGPU_RestoreVramSysArea
+                0x001032d0                GSPGPU_SubmitGxCommand
+ .text          0x001033dc      0x264 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gx.o)
+                0x001033dc                GX_RequestDma
+                0x00103430                GX_SetCommandList_Last
+                0x00103498                GX_SetMemoryFill
+                0x0010350c                GX_SetDisplayTransfer
+                0x00103570                GX_SetTextureCopy
+                0x001035d8                GX_SetCommandList_First
+ .text          0x00103640      0x644 C:\devkitPro\ctrulib\libctru/lib\libctru.a(hid.o)
+                0x00103640                hidExit
+                0x001036c4                hidWaitForEvent
+                0x0010371c                hidCheckSectionUpdateTime
+                0x00103758                hidScanInput
+                0x0010398c                hidKeysHeld
+                0x0010399c                hidKeysDown
+                0x001039ac                hidKeysUp
+                0x001039bc                hidTouchRead
+                0x001039d4                hidCircleRead
+                0x001039ec                hidAccelRead
+                0x00103a0c                hidGyroRead
+                0x00103a2c                HIDUSER_GetHandles
+                0x00103ac0                hidInit
+                0x00103bc4                HIDUSER_EnableAccelerometer
+                0x00103bf4                HIDUSER_DisableAccelerometer
+                0x00103c24                HIDUSER_EnableGyroscope
+                0x00103c54                HIDUSER_DisableGyroscope
+ .text          0x00103c84      0x360 C:\devkitPro\ctrulib\libctru/lib\libctru.a(irrst.o)
+                0x00103c84                irrstExit
+                0x00103cec                irrstWaitForEvent
+                0x00103d38                irrstCheckSectionUpdateTime
+                0x00103d74                irrstScanInput
+                0x00103e28                irrstKeysHeld
+                0x00103e40                irrstCstickRead
+                0x00103e58                IRRST_GetHandles
+                0x00103eac                irrstInit
+                0x00103f74                IRRST_Initialize
+                0x00103fb4                IRRST_Shutdown
+ *fill*         0x00103fe4        0xc 
  .text          0x00103ff0      0x220 C:\devkitPro\ctrulib\libctru/lib\libctru.a(svc.o)
                 0x00103ff0                getThreadCommandBuffer
                 0x00103ffc                svcControlMemory
