@@ -56,11 +56,11 @@ void gfxDrawSpriteAlpha(gfxScreen_t screen, gfx3dSide_t side, u8* spriteData, u1
 		u8* data=&spriteData[(xOffset)*4];
 		for(i=xOffset; i<xOffset+widthDrawn; i++)
 		{
-			if(data[3])
+			if(data[0])
 			{
-				fbd[0]=data[0];
-				fbd[1]=data[1];
-				fbd[2]=data[2];
+				fbd[0]=data[1];
+				fbd[1]=data[2];
+				fbd[2]=data[3];
 			}
 			fbd+=3;
 			data+=4;

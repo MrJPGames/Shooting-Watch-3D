@@ -733,21 +733,21 @@ ARM.exidx
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x8683
+.debug_info     0x00000000     0x868a
  *(.debug_info)
- .debug_info    0x00000000      0x50d gfx.o
- .debug_info    0x0000050d      0x6d6 main.o
- .debug_info    0x00000be3      0xb57 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gfx.o)
- .debug_info    0x0000173a      0xc18 C:\devkitPro\ctrulib\libctru/lib\libctru.a(initSystem.o)
- .debug_info    0x00002352      0x5b3 C:\devkitPro\ctrulib\libctru/lib\libctru.a(srv.o)
- .debug_info    0x00002905     0x2817 C:\devkitPro\ctrulib\libctru/lib\libctru.a(apt.o)
- .debug_info    0x0000511c      0xe20 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gsp.o)
- .debug_info    0x00005f3c      0x4e7 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gx.o)
- .debug_info    0x00006423      0xbf1 C:\devkitPro\ctrulib\libctru/lib\libctru.a(hid.o)
- .debug_info    0x00007014      0x678 C:\devkitPro\ctrulib\libctru/lib\libctru.a(irrst.o)
- .debug_info    0x0000768c       0x73 C:\devkitPro\ctrulib\libctru/lib\libctru.a(svc.o)
- .debug_info    0x000076ff      0x6a8 C:\devkitPro\ctrulib\libctru/lib\libctru.a(linear.o)
- .debug_info    0x00007da7      0x8dc C:\devkitPro\ctrulib\libctru/lib\libctru.a(mem_pool.o)
+ .debug_info    0x00000000      0x514 gfx.o
+ .debug_info    0x00000514      0x6d6 main.o
+ .debug_info    0x00000bea      0xb57 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gfx.o)
+ .debug_info    0x00001741      0xc18 C:\devkitPro\ctrulib\libctru/lib\libctru.a(initSystem.o)
+ .debug_info    0x00002359      0x5b3 C:\devkitPro\ctrulib\libctru/lib\libctru.a(srv.o)
+ .debug_info    0x0000290c     0x2817 C:\devkitPro\ctrulib\libctru/lib\libctru.a(apt.o)
+ .debug_info    0x00005123      0xe20 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gsp.o)
+ .debug_info    0x00005f43      0x4e7 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gx.o)
+ .debug_info    0x0000642a      0xbf1 C:\devkitPro\ctrulib\libctru/lib\libctru.a(hid.o)
+ .debug_info    0x0000701b      0x678 C:\devkitPro\ctrulib\libctru/lib\libctru.a(irrst.o)
+ .debug_info    0x00007693       0x73 C:\devkitPro\ctrulib\libctru/lib\libctru.a(svc.o)
+ .debug_info    0x00007706      0x6a8 C:\devkitPro\ctrulib\libctru/lib\libctru.a(linear.o)
+ .debug_info    0x00007dae      0x8dc C:\devkitPro\ctrulib\libctru/lib\libctru.a(mem_pool.o)
 
 .debug_abbrev   0x00000000     0x1caf
  *(.debug_abbrev)
@@ -798,11 +798,11 @@ ARM.exidx
 
 .debug_str      0x00000000     0x2497
  *(.debug_str)
- .debug_str     0x00000000      0x211 gfx.o
-                                0x268 (size before relaxing)
- .debug_str     0x00000211      0x376 main.o
+ .debug_str     0x00000000      0x228 gfx.o
+                                0x27f (size before relaxing)
+ .debug_str     0x00000228      0x2e9 main.o
                                 0x4c4 (size before relaxing)
- .debug_str     0x00000587      0x3cf C:\devkitPro\ctrulib\libctru/lib\libctru.a(gfx.o)
+ .debug_str     0x00000511      0x445 C:\devkitPro\ctrulib\libctru/lib\libctru.a(gfx.o)
                                 0x664 (size before relaxing)
  .debug_str     0x00000956      0x58f C:\devkitPro\ctrulib\libctru/lib\libctru.a(initSystem.o)
                                 0x723 (size before relaxing)

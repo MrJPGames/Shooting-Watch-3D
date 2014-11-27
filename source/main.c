@@ -34,9 +34,9 @@ void render(){
 	h=floor(score/100);
 	t=floor(score/10-h*10);
 	o=score-t*10-h*100;
-	if (h != 0){renderNumber(234, 152, h);}
-	if (t != 0 || h != 0){renderNumber(256, 152, t);}
-	renderNumber(278, 152, o);
+	if (h != 0){renderNumber(234, 155, h);}
+	if (t != 0 || h != 0){renderNumber(256, 155, t);}
+	renderNumber(278, 155, o);
 }
 
 int main()
