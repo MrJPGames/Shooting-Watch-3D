@@ -15,6 +15,7 @@ build/
 *.msm
 *.msp
 *.exe
+*.elf
 
 # =========================
 # Operating System Files
