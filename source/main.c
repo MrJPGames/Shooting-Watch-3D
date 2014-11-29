@@ -1,9 +1,9 @@
 #include <3ds.h>
-#include <math.h>
 #include "gfx.h"
+#include "render.h"
 
 #include "bgtop_bin.h"
-#include "numbers_bin.h"
+#include "bgbottom_bin.h"
 
 int hscore=0;
 int avgScore=0;
@@ -13,30 +13,26 @@ bool inMenu=true;
 bool inGameOver=false;
 int score=0; //Score of current game
 int gametime=0; //seconds into game
-int h=0; //hunderds
-int t=0; //tens
-int o=0; //ones
+int gotimer=0; //timer for game over screen!
 
 void resetVars(){
 	score=0; //Score of current game
-	gametime=0; //seconds into game
-	h=0; //hunderds
-	t=0; //tens
-	o=0; //ones
-}
-
-void renderNumber(int x, int y, int dinum){
-	gfxDrawSpriteAlpha(GFX_TOP, GFX_LEFT, (u8*)numbers_bin+2448*dinum, 34, 18, y, x); //change around to be more intuitive
+	gametime=0; // 1/60 of seconds into game
+	gotimer=0;
 }
 
 void render(){
 	gfxDrawSprite(GFX_TOP, GFX_LEFT, (u8*)bgtop_bin, 240, 400, 0, 0); //Render Background!
-	h=floor(score/100);
-	t=floor(score/10-h*10);
-	o=score-t*10-h*100;
-	if (h != 0){renderNumber(234, 155, h);}
-	if (t != 0 || h != 0){renderNumber(256, 155, t);}
-	renderNumber(278, 155, o);
+	gfxDrawSprite(GFX_BOTTOM, GFX_LEFT, (u8*)bgbottom_bin, 240, 320, 0, 0); //Render Background Bottom screeen!
+	renderBottomScreen(hscore, avgScore);
+	if (inGame || inGameOver){
+		renderScore(score);
+		if (inGame){
+			renderTimer(gametime);
+		}
+	}else{
+		renderScore(hscore);
+	}
 }
 
 int main()
@@ -56,6 +52,7 @@ int main()
 
 		// Your code goes here
 
+		if (score > hscore){hscore=score;}
 		u32 kDown = hidKeysDown();
 		if (kDown & KEY_START)
 			break; // break in order to return to hbmenu
@@ -82,8 +79,8 @@ int main()
 			}
 		}
 		if (inGameOver){
-			if (score > hscore){hscore=score;}
-			if (kDown & KEY_B){
+			gotimer++;
+			if (kDown & KEY_B || gotimer > 120){
 				inGameOver=false;
 				inMenu=true;
 			}
