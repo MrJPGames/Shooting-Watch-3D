@@ -1,5 +1,6 @@
 @echo off
 make
+set push=n
 set /p push=Push to 3ds? (Y/N):
 if "%push%" == "y" goto cat
 goto nocat
