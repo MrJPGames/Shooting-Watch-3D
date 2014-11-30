@@ -17,4 +17,4 @@ You're allowed to modify the code (learn from it if you want) or do anything els
 
 credits:
 =====
-Jasper Peters (MrJPGames/JPCracker)
+Jasper Peters (MrJPGames)
