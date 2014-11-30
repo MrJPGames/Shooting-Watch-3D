@@ -99,12 +99,12 @@ void gfxDrawSpriteAlphaBlend(gfxScreen_t screen, gfx3dSide_t side, u8* spriteDat
 		u8* data=&spriteData[(xOffset)*4];
 		for(i=xOffset; i<xOffset+widthDrawn; i++)
 		{
-			if(data[3])
+			if(data[0])
 			{
 				u8 alphaSource = data[3];
-				fbd[0] = ((data[0] * alphaSource)+(fbd[0] * (255 - alphaSource))) / 256;
-				fbd[1] = ((data[1] * alphaSource)+(fbd[1] * (255 - alphaSource))) / 256;
-				fbd[2] = ((data[2] * alphaSource)+(fbd[2] * (255 - alphaSource))) / 256;
+				fbd[0] = ((data[1] * alphaSource)+(fbd[0] * (255 - alphaSource))) / 256;
+				fbd[1] = ((data[2] * alphaSource)+(fbd[1] * (255 - alphaSource))) / 256;
+				fbd[2] = ((data[3] * alphaSource)+(fbd[2] * (255 - alphaSource))) / 256;
 			}
 			fbd+=3;
 			data+=4;
@@ -143,12 +143,12 @@ void gfxDrawSpriteAlphaBlendFade(gfxScreen_t screen, gfx3dSide_t side, u8* sprit
 		u8* data=&spriteData[(xOffset)*4];
 		for(i=xOffset; i<xOffset+widthDrawn; i++)
 		{
-			if(data[3])
+			if(data[0])
 			{
 				u8 alphaSource = (fadeValue * data[3]) / 256;
-				fbd[0]=((data[0] * alphaSource) / 256)+((fbd[0] * (255 - alphaSource)) / 256);
-				fbd[1]=((data[1] * alphaSource) / 256)+((fbd[1] * (255 - alphaSource)) / 256);
-				fbd[2]=((data[2] * alphaSource) / 256)+((fbd[2] * (255 - alphaSource)) / 256);
+				fbd[0]=((data[1] * alphaSource) / 256)+((fbd[0] * (255 - alphaSource)) / 256);
+				fbd[1]=((data[2] * alphaSource) / 256)+((fbd[1] * (255 - alphaSource)) / 256);
+				fbd[2]=((data[3] * alphaSource) / 256)+((fbd[2] * (255 - alphaSource)) / 256);
 			}
 			fbd+=3;
 			data+=4;
