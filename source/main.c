@@ -11,14 +11,23 @@ int playTimes=0;
 bool inGame=false;
 bool inMenu=true;
 bool inGameOver=false;
+bool inGameTypeB=false;
+
+bool readyTypeA=false;
+bool readyTypeB=false;
+
 int score=0; //Score of current game
 int gametime=0; //seconds into game
 int gotimer=0; //timer for game over screen!
+
+touchPosition tp;
 
 void resetVars(){
 	score=0; //Score of current game
 	gametime=0; // 1/60 of seconds into game
 	gotimer=0;
+	readyTypeA=false;
+	readyTypeB=false;
 }
 
 void render(){
@@ -49,15 +58,17 @@ int main()
 	while (aptMainLoop())
 	{
 		hidScanInput();
-
-		// Your code goes here
-
-		if (score > hscore){hscore=score;}
 		u32 kDown = hidKeysDown();
+
+		if (score > hscore)
+			hscore=score;
 		if (kDown & KEY_START)
 			break; // break in order to return to hbmenu
+
 		if (inGame){
 			if (kDown & KEY_A)
+				score++;
+			if (kDown & KEY_B && inGameTypeB)
 				score++;
 			gametime++;
 			if (gametime > 600){
@@ -75,8 +86,16 @@ int main()
 			if (kDown & KEY_A){
 				inMenu=false;
 				inGame=true;
+				inGameTypeB=false;
 				resetVars();
 			}
+			if (kDown & KEY_A){
+				inMenu=false;
+				inGame=true;
+				inGameTypeB=true;
+				resetVars();
+			}
+			//Make menu options instead of buttons
 		}
 		if (inGameOver){
 			gotimer++;
