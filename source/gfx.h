@@ -8,4 +8,3 @@ void gfxDrawSpriteAlphaBlendFade(gfxScreen_t screen, gfx3dSide_t side, u8* sprit
 
 void gfxFillColor(gfxScreen_t screen, gfx3dSide_t side, u8 rgbColor[3]);
 void gfxFillColorGradient(gfxScreen_t screen, gfx3dSide_t side, u8 rgbColorStart[3], u8 rgbColorEnd[3]);
-//test
