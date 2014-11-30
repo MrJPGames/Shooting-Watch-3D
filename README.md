@@ -1,7 +1,7 @@
-TPSgui
+Shooting Watch 3D
 ======
 
-TPS is a game where you press the A or A and B button as fast as possible!
+Shooting Watch 3D is a game where you press the A or A and B button as fast as possible! It's based on a handeld with the name "Shooting Watch" made by hudsonsoft!
 
 Current Features:
 -- Press A as fast in 10 seconds
