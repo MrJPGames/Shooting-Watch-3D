@@ -3,12 +3,12 @@ Shooting Watch 3D
 
 Shooting Watch 3D is a game where you press the A or A and B button as fast as possible! It's based on a handeld with the name "Shooting Watch" made by hudsonsoft!
 
-Current Features:
+Current Features:<br>
 -- Press A as fast in 10 seconds<br>
 -- See your HighScore<br>
 -- See your Average Score
 
-Upcomming Features:
+Upcomming Features:<br>
 -- Save High/Average Score!<br>
 -- Have a watch feature<br>
 -- A possible A and B version
