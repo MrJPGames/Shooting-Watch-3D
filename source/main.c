@@ -4,6 +4,9 @@
 
 #include "bgtop_bin.h"
 #include "bgbottom_bin.h"
+#include "button_selected_bin.h"
+#include "button_unselected_bin.h"
+#include "button_exit_bin.h"
 
 int hscore=0;
 int avgScore=0;
@@ -20,7 +23,7 @@ int score=0; //Score of current game
 int gametime=0; //seconds into game
 int gotimer=0; //timer for game over screen!
 
-touchPosition tp;
+touchPosition touch;
 
 void resetVars(){
 	score=0; //Score of current game
@@ -32,7 +35,7 @@ void resetVars(){
 
 void render(){
 	gfxDrawSprite(GFX_TOP, GFX_LEFT, (u8*)bgtop_bin, 240, 400, 0, 0); //Render Background!
-	gfxDrawSprite(GFX_BOTTOM, GFX_LEFT, (u8*)bgbottom_bin, 240, 320, 0, 0); //Render Background Bottom screeen!
+	gfxDrawSprite(GFX_BOTTOM, GFX_LEFT, (u8*)bgbottom_bin, 240, 320, 35, 20); //Render Background Bottom screeen!
 	renderBottomScreen(hscore, avgScore);
 	if (inGame || inGameOver){
 		renderScore(score);
@@ -42,6 +45,8 @@ void render(){
 	}else{
 		renderScore(hscore);
 	}
+	//render buttons
+	gfxDrawSpriteAlpha(GFX_BOTTOM, GFX_LEFT, (u8*)button_exit_bin, 37, 133, 0, 0); //Render Background Bottom screeen!
 }
 
 int main()
@@ -59,7 +64,7 @@ int main()
 	{
 		hidScanInput();
 		u32 kDown = hidKeysDown();
-
+		hidTouchRead(&touch);
 		if (score > hscore)
 			hscore=score;
 		if (kDown & KEY_START)
@@ -83,19 +88,23 @@ int main()
 			}
 		}
 		if (inMenu){
-			if (kDown & KEY_A){
-				inMenu=false;
-				inGame=true;
-				inGameTypeB=false;
-				resetVars();
+			if (readyTypeA){
+				if (kDown & KEY_A){
+					inMenu=false;
+					inGame=true;
+					inGameTypeB=false;
+					resetVars();
+				}
+			}else if (readyTypeB){
+				if (kDown & KEY_A){
+					inMenu=false;
+					inGame=true;
+					inGameTypeB=true;
+					resetVars();
+				}
+			}else{
+
 			}
-			if (kDown & KEY_A){
-				inMenu=false;
-				inGame=true;
-				inGameTypeB=true;
-				resetVars();
-			}
-			//Make menu options instead of buttons
 		}
 		if (inGameOver){
 			gotimer++;
@@ -104,6 +113,9 @@ int main()
 				inMenu=true;
 			}
 		}
+
+		if (kDown & KEY_TOUCH && touch.px > 20 && touch.px < 153 && touch.py > 169 && touch.py < 206)
+			break;
 
 		render();
 		// Flush and swap framebuffers
