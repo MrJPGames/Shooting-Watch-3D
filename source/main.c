@@ -35,7 +35,7 @@ void resetVars(){
 
 void render(){
 	gfxDrawSprite(GFX_TOP, GFX_LEFT, (u8*)bgtop_bin, 240, 400, 0, 0); //Render Background!
-	gfxDrawSprite(GFX_BOTTOM, GFX_LEFT, (u8*)bgbottom_bin, 240, 320, 35, 20); //Render Background Bottom screeen!
+	gfxDrawSprite(GFX_BOTTOM, GFX_LEFT, (u8*)bgbottom_bin, 240, 320, 0,0); //Render Background Bottom screeen!
 	renderBottomScreen(hscore, avgScore);
 	if (inGame || inGameOver){
 		renderScore(score);
@@ -46,7 +46,7 @@ void render(){
 		renderScore(hscore);
 	}
 	//render buttons
-	gfxDrawSpriteAlpha(GFX_BOTTOM, GFX_LEFT, (u8*)button_exit_bin, 37, 133, 0, 0); //Render Background Bottom screeen!
+	gfxDrawSpriteAlpha(GFX_BOTTOM, GFX_LEFT, (u8*)button_exit_bin, 36, 133, 35, 20); //Render Background Bottom screeen!
 }
 
 int main()
