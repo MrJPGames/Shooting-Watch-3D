@@ -9,16 +9,19 @@
 #include "button_unselected_bin.h"
 #include "button_exit_bin.h"
 
-int hscore=0;
-int avgScore=0;
-int playTimes=0;
+int hscore[2] = {0};
+int avgScore[2] = {0};
+int playTimes[2] = {0};
+
+int gamemid=0; //Game mode ID (0=A 1=B)
+
 bool inGame=false;
 bool inMenu=true;
 bool inGameOver=false;
 bool inGameTypeB=false;
 
 bool readyTypeA=false;
-bool readyTypeB=false;
+bool readyTypeB=true;
 
 int score=0; //Score of current game
 int gametime=0; //seconds into game
@@ -30,21 +33,19 @@ void resetVars(){
 	score=0; //Score of current game
 	gametime=0; // 1/60 of seconds into game
 	gotimer=0;
-	readyTypeA=false;
-	readyTypeB=false;
 }
 
 void render(){
 	gfxDrawSprite(GFX_TOP, GFX_LEFT, (u8*)bgtop_bin, 240, 400, 0, 0); //Render Background!
 	gfxDrawSprite(GFX_BOTTOM, GFX_LEFT, (u8*)bgbottom_bin, 240, 320, 0,0); //Render Background Bottom screeen!
-	renderBottomScreen(hscore, avgScore);
+	renderBottomScreen(hscore[gamemid], avgScore[gamemid]);
 	if (inGame || inGameOver){
 		renderScore(score);
 		if (inGame){
 			renderTimer(gametime);
 		}
 	}else{
-		renderScore(hscore);
+		renderScore(hscore[gamemid]);
 	}
 
 	//render buttons
@@ -77,8 +78,9 @@ int main()
 		hidScanInput();
 		u32 kDown = hidKeysDown();
 		hidTouchRead(&touch);
-		if (score > hscore)
-			hscore=score;
+		gamemid=readyTypeB;
+		if (score > hscore[readyTypeB])
+			hscore[readyTypeB]=score;
 		if (kDown & KEY_START)
 			break; // break in order to return to hbmenu
 
@@ -91,12 +93,12 @@ int main()
 			if (gametime > 600){
 				inGame=false;
 				inGameOver=true;
-				if (playTimes == 0){
-					avgScore=score; //No need to filter out "normal code" as it will still work!
+				if (playTimes[gamemid] == 0){
+					avgScore[gamemid]=score; //No need to filter out "normal code" as it will still work!
 				}else{
-					avgScore=(avgScore*playTimes+score)/(playTimes+1);
+					avgScore[gamemid]=(avgScore[gamemid]*playTimes[gamemid]+score)/(playTimes[gamemid]+1);
 				}
-				playTimes++;
+				playTimes[gamemid]++;
 			}
 		}
 		if (inMenu){
@@ -108,7 +110,7 @@ int main()
 					resetVars();
 				}
 			}else if (readyTypeB){
-				if (kDown & KEY_A){
+				if (kDown & KEY_A || kDown & KEY_B){
 					inMenu=false;
 					inGame=true;
 					inGameTypeB=true;

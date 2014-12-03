@@ -4,7 +4,7 @@
 #include "numbers_bin.h"
 #include "smallnumbers_bin.h"
 
-void renderNumber(int x, int y, int dinum,gfxScreen_t screen){
+void renderNumber(int x, int y, int dinum, gfxScreen_t screen){
 	gfxDrawSpriteAlpha(screen, GFX_LEFT, (u8*)numbers_bin+2448*dinum, 34, 18, y, x); //change around to be more intuitive
 }
 
