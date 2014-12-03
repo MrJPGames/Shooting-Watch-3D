@@ -52,4 +52,6 @@ void renderBottomScreen(int hscore, int avrScore){
 	if (h2 != 0){renderNiceNumber(171, 143, h2, GFX_BOTTOM);}
 	if (t2 != 0 || h2 != 0){renderNiceNumber(183-(nummove2*13), 143, t2, GFX_BOTTOM);}
 	renderNiceNumber(196-(nummove2*13), 143, o2, GFX_BOTTOM);
+
+	
 }
