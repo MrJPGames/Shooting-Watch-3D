@@ -13,7 +13,7 @@ int hscore[2] = {0};
 int avgScore[2] = {0};
 int playTimes[2] = {0};
 
-int gamemid=0; //Game mode ID (0=A 1=B)
+int gamemid=-1; //Game mode ID (0=A 1=B)
 
 bool inGame=false;
 bool inMenu=true;
@@ -79,8 +79,8 @@ int main()
 		u32 kDown = hidKeysDown();
 		hidTouchRead(&touch);
 		gamemid=readyTypeB;
-		if (score > hscore[readyTypeB])
-			hscore[readyTypeB]=score;
+		if (score > hscore[gamemid])
+			hscore[gamemid]=score;
 		if (kDown & KEY_START)
 			break; // break in order to return to hbmenu
 
@@ -128,9 +128,10 @@ int main()
 		}
 		if (inGameOver){
 			gotimer++;
-			if (kDown & KEY_B || gotimer > 120){
+			if (gotimer > 120){
 				inGameOver=false;
 				inMenu=true;
+				score=0;
 			}
 		}
 
