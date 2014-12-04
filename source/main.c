@@ -20,8 +20,8 @@ bool inMenu=true;
 bool inGameOver=false;
 bool inGameTypeB=false;
 
-bool readyTypeA=false;
-bool readyTypeB=true;
+bool readyTypeA=true;
+bool readyTypeB=false;
 
 int score=0; //Score of current game
 int gametime=0; //seconds into game
