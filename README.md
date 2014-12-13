@@ -18,3 +18,6 @@ You're allowed to modify the code (learn from it if you want) or do anything els
 credits:
 =====
 Jasper Peters (MrJPGames)
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/MrJPGames/shooting-watch-3d/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
